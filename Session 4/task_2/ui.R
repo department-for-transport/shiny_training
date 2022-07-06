@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(plotly)
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
@@ -22,11 +23,6 @@ shinyUI(fluidPage(
                   label = "Choose a year", 
                   choices = 1970:2020, 
                   selected = 2010),
-       sliderInput("bins",
-                   "Hey, choose a number of bins!",
-                   min = 5,
-                   max = 80,
-                   value = 20),
       
       downloadButton("download_data", 
                      "Download")

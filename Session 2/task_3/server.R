@@ -9,6 +9,7 @@
 
 library(shiny)
 library(gapminder)
+library(DT)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {

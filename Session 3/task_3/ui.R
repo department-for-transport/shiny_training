@@ -23,13 +23,7 @@ shinyUI(fluidPage(
                   choices = 2000:2010, 
                   selected = 2010,
                   multiple = TRUE),
-      dateInput("date",
-                label = "Choose a date",
-                min = lubridate::today() - 365,
-                max = lubridate::today(),
-                value = as.Date("2021-11-09")
-                ),
-      
+     
        sliderInput("bins",
                    "Hey, choose a number of bins!",
                    min = 5,

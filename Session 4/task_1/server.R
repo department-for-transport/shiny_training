@@ -10,23 +10,14 @@
 library(shiny)
 library(gapminder)
 library(dplyr)
+library(ggplot2)
 
 eurovision_data <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-05-17/eurovision.csv')
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
   
-  output$new_chart <- renderPlot({
-    
-    # generate bins based on input$bins from ui.R
-    x    <- faithful[, 2] 
-    bins <- seq(min(x), max(x), length.out = input$bins + 1)
-    
-    # draw the histogram with the specified number of bins
-    hist(x, breaks = bins, col = 'darkgray', border = 'white')
-    
-  })
-  
+
   eurovision_filtered <- reactive({
     
     eurovision_data %>%

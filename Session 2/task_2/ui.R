@@ -21,7 +21,7 @@ shinyUI(fluidPage(
       selectInput("year", 
                   label = "Choose a year", 
                   choices = 2000:2010, 
-                  selected = 2010,
+                  selected = 2007,
                   multiple = TRUE),
       dateInput("date",
                 label = "Choose a date",

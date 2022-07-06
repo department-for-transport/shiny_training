@@ -10,6 +10,7 @@
 library(shiny)
 library(gapminder)
 library(dplyr)
+library(DT)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
@@ -38,7 +39,7 @@ shinyServer(function(input, output) {
   output$gap <- renderDataTable({
     
     gapminder::gapminder %>%
-      dplyr::filter(year %in% as.numeric(input$year))
+      dplyr::filter(year %in% input$year)
     
   })
   
