@@ -32,6 +32,20 @@ shinyServer(function(input, output) {
     
   })
   
+
+  output$plotly_chart <- renderPlotly({
+    
+    data <- eurovision_data %>%
+      dplyr::group_by(running_order) %>%
+      dplyr::summarise(mean_points = mean(total_points, na.rm = TRUE))
+  
+    ggplotly(
+      ggplot(data, aes(x = running_order, y = mean_points))+
+        geom_bar(stat = "identity")
+    )
+    
+  })
+  
   ##Create a text output
   
   output$date_text <- renderText({

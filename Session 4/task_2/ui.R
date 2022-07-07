@@ -36,6 +36,7 @@ shinyUI(fluidPage(
       
       tabsetPanel(id = "tabs",
                   tabPanel("Chart", 
+                           plotlyOutput("plotly_chart"),
                            plotOutput("eurovision_chart")),
                   tabPanel("Text",
                            h3("I like writing text"),
