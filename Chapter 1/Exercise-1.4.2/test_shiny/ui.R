@@ -27,14 +27,8 @@ shinyUI(fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
-      tabsetPanel(id = "tabs",
-                  tabPanel("Chart", 
-                           plotOutput("new_chart")),
-                  tabPanel("Text",
-                           h3("I like writing text"),
-                           h6("Sometimes it is small"),
-                           h1("Sometimes it is large"))
-      ) #End of tabset panel
-    ) #End of main panel
-  ) #End of sidebar layout
-))
+      plotOutput("distPlot")
+      )
+    )
+  )
+)
